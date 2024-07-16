@@ -16,9 +16,9 @@ interface BoardListProps {
 }
 
 export const BoardList = ({ orgId, query }: BoardListProps) => {
-//   const data = useQuery(api.boards.get, {
-//     orgId,
-//     ...query,
-//   });
-  return <EmptyFavorites />;
+  //   const data = useQuery(api.boards.get, {
+  //     orgId,
+  //     ...query,
+  //   });
+  return <EmptyBoards />;
 };
