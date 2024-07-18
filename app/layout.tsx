@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import { Loading } from "@/components/auth/loading";
 import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config";
+import { ModalProvider } from "@/providers/modal-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,8 +24,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Suspense fallback={<Loading />}>
-          <Toaster theme="light" closeButton richColors />
-          <ConvexClientProvider>{children}</ConvexClientProvider>
+          <ConvexClientProvider>
+            <Toaster theme="light" closeButton richColors />
+            <ModalProvider />
+            {children}
+          </ConvexClientProvider>
         </Suspense>
       </body>
     </html>
